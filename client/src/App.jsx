@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
-import Login from './Pages/Login.jsx';
-import Register from './Pages/Register.jsx';
-import Dashboard from './Pages/Dashboard.jsx';
-import History from './Pages/History.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import History from './pages/History.jsx';
 import './index.css';
 
 function App() {

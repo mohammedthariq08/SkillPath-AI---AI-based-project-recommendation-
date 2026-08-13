@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import API from '../API/api';
+import API from '../API/api.js';
 import Historycard from '../Components/Historycard.jsx';
 
 function History(){

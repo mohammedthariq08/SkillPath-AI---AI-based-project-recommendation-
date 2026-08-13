@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import API from '../API/api';
+import API from '../API/api.js';
 import Projectcard from '../Components/Projectcard.jsx';
 
 function Dashboard(){

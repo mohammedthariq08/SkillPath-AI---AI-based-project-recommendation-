@@ -1,4 +1,4 @@
-import API from "../API/api";
+import API from "../API/api.js";
 
 function Projectcard({project}){
     return(

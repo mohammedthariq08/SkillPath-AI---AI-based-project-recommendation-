@@ -1,4 +1,4 @@
-import API from '../API/api';
+import API from '../API/api.js';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
