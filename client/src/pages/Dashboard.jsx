@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import API from '../API/api';
-import Projectcard from '../Components/Projectcard';
+import Projectcard from '../Components/Projectcard.jsx';
 
 function Dashboard(){
     const [ formdata, setFormdata ] = useState({

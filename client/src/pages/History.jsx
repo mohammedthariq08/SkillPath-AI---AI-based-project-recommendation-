@@ -1,6 +1,6 @@
 import { useState,useEffect } from 'react';
 import API from '../API/api';
-import Historycard from '../Components/Historycard';
+import Historycard from '../Components/Historycard.jsx';
 
 function History(){
     const [ data, setData ] = useState(null);
