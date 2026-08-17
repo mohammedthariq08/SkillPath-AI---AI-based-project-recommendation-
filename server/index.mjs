@@ -29,12 +29,39 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-
-mongoose.connect(process.env.MONGO_URL)
-.then(()=>console.log('DB Connected'))
-.catch((err)=>console.log(err.message));
-
 app.use('/auth',regRouter);
 app.use('/recommend',recRouter);
 
-app.listen(process.env.PORT, ()=>console.log(`App is listening in Port ${process.env.PORT}`)); 
+app.get('/test', (req,res)=>{
+    res.json({message:'Backend is working'});
+})
+
+app.get('/test-db', async(req,res)=>{
+    try{
+        const result = await mongoose.connection.db
+        .admin()
+        .ping();
+    res.json({
+        message: 'MongoDB is working',
+        result
+    })
+    }
+    catch(err){
+        console.error('TEST DB ERROR', err);
+        res.status(500).json({
+            message:"MongoDB failed",
+            error: err.message 
+        })
+    }
+})
+
+mongoose.connect(process.env.MONGO_URL)
+.then(()=>{console.log('DB Connected');
+    app.listen(process.env.PORT, ()=>{
+        console.log(`server running on ${process.env.PORT}`)
+
+    })
+})
+.catch((err)=>{console.error("MomgoDB error");
+    console.error(err);
+});
