@@ -39,7 +39,7 @@ export const recommendedProjects = async(req,res)=>{
     }
     catch(err){
         console.error('recommended projects error:',err)
-        res.status(500).json({message: 'Internal Server Error'});
+        res.status(500).json({message: 'Internal Server Error', error: err.message});
     }
 }
 export const projectHistory = async(req,res)=>{
