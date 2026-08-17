@@ -62,6 +62,7 @@ export const Logout = async(req,res)=>{
         res.status(200).json({message: 'Logout Successful'});
     }
     catch(err){
-        res.status(500).json({message: 'Internal Server Error'});
+        console.error('REGISTER ERROR',err)
+        res.status(500).json({message: 'Internal Server Error', error: err.message});
     }
 }
