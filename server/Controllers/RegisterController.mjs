@@ -21,7 +21,9 @@ export const Register = async(req,res)=>{
         res.status(200).json(user);
     }
     catch(err){
-        res.status(500).json({message: 'Internal Server Error'});
+        console.error('Register error')
+        console.error(err)
+        res.status(500).json({message: 'Internal Server Error',error:err.message});
     }
 }
 export const Login = async(req,res)=>{
