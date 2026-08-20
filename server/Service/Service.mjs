@@ -67,7 +67,7 @@ STRICT RULES:
 `;
     
     const response = await getClient().chat.completions.create({
-        model: 'meta-llama/llama-prompt-guard-2-86m',
+        model: 'openai/gpt-oss-20b',
         response_format: { type: 'json_object' },
         messages: [{ role: 'user', content: prompt}]
     });
