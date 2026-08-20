@@ -67,7 +67,7 @@ STRICT RULES:
 `;
     
     const response = await getClient().chat.completions.create({
-        model: 'llama-3.1-8b-instant',
+        model: 'meta-llama/llama-prompt-guard-2-86m',
         response_format: { type: 'json_object' },
         messages: [{ role: 'user', content: prompt}]
     });
