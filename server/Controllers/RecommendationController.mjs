@@ -38,7 +38,11 @@ export const recommendedProjects = async(req,res)=>{
         res.status(200).json(saved);
     }
     catch(err){
-        console.error('recommended projects error:',err)
+        console.error('Recommend Error')
+        console.error('Message:', err.message)
+        console.error('Status:', err.status)
+        console.error('Response:', err.response?.data)
+        console.error('stack:', err.stack)
         res.status(500).json({message: 'Internal Server Error', error: err.message});
     }
 }
